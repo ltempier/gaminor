@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./style.css"/>
+
+
+</head>
+<body>
+
+<canvas id="canvas"></canvas>
+
+
+<script src="./node_modules/paper/dist/paper-core.js"></script>
+<script src="Class.js"></script>
+<script src="ClassClient.js"></script>
+
+<script>
+    var canvas = document.getElementById("canvas");
+    paper.setup(canvas);
+
+    var json = {
+        size: [1000, 250],
+        balls: [
+            {
+                position: {x: 0, y: 0},
+                vector: {i: 1, j:2 }
+            }
+        ],
+        obstacles: [
+            {
+                position: {x: 50, y: 50},
+                size: 30
+            },
+            {
+                position: {x: 200, y: 100},
+                size: 20
+            },
+            {
+                position: {x: 100, y: 150},
+                size: 30
+            },
+            {
+                position: {x: 500, y: 100},
+                size: 30
+            },
+            {
+                position: {x: 300, y: 50},
+                size: 60
+            },
+            {
+                position: {x: 400, y: 200},
+                size: 40
+            },
+            {
+                position: {x: 600, y: 60},
+                size: 40
+            },
+            {
+                position: {x: 700, y: 110},
+                size: 70
+            }
+        ],
+        startDate: 0
+    };
+
+
+    //    json = Gaminor.generateRandomConfig();
+
+    var gaminor = new GaminorClient(json);
+    gaminor.processDelay(10000000000, 0)
+
+
+</script>
+
+
+</body>
+</html>
